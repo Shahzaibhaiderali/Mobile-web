@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar bg-[#48afff] py-4 px-6 flex flex-col lg:flex-row items-center justify-between">
+        <div class="flex items-center justify-between w-full lg:w-auto">
+            <img src="assets/Logos/images1.svg" alt="Logo" class="h-16 lg:h-10 w-auto lg:mr-4">
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-white">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="menu" class="hidden lg:flex items-center space-x-4 mt-4 lg:mt-0">
+            <input type="search" placeholder="Search Smartphones"
+                class="px-4 py-2 w-full lg:w-72 bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <i class="fa-solid fa-microphone text-white text-2xl"></i>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md hover:shadow-md focus:outline-none">
+                Search
+            </button>
+        </div>
+        <div class="form flex space-x-4 mt-4 lg:mt-0">
+            <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md hover:shadow-md focus:outline-none">
+                Sign In
+            </a>
+            <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md hover:shadow-md focus:outline-none">
+                Sign Up
+            </a>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <div class="flex space-x-4">
+            <a href="#" class="group">
+                <img src="assets/Logos/images2.svg" alt="Category" class="h-16 w-auto transform transition-transform group-hover:scale-110">
+            </a>
+            <a href="#" class="group">
+                <img src="assets/Logos/images3.svg" alt="Category" class="h-16 w-auto transform transition-transform group-hover:scale-110">
+            </a>
+            <a href="#" class="group">
+                <img src="assets/Logos/images4.svg" alt="Category" class="h-16 w-auto transform transition-transform group-hover:scale-110">
+            </a>
+            <a href="#" class="group">
+                <img src="assets/Logos/images5.svg" alt="Category" class="h-16 w-auto transform transition-transform group-hover:scale-110">
+            </a>
+            <a href="#" class="group">
+                <img src="assets/Logos/images6.svg" alt="Category" class="h-16 w-auto transform transition-transform group-hover:scale-110">
+            </a>
+            <a href="#" class="group">
+                <img src="assets/Logos/images7.svg" alt="Category" class="h-16 w-auto transform transition-transform group-hover:scale-110">
+            </a>
+            <a href="#" class="group">
+                <img src="assets/Logos/images8.svg" alt="Category" class="h-16 w-auto transform transition-transform group-hover:scale-110">
+            </a>
+        </div>
+    </div>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="assets/slide images/images1.jpg" alt="slide image">
+            <img src="assets/slide images/images2.jpg" alt="slide image">
+            <img src="assets/slide images/images3.jpg" alt="slide image">
+            <img src="assets/slide images/images4.jpg" alt="slide image">
+            <img src="assets/slide images/images5.jpg" alt="slide image">
+        </div>
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Cart items (only show the first 3 items) -->
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile01.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone </p>
+                <p class="text-gray-600">Price: 2,50000</p>
+                <p class="text-gray-600">Model: 13 pro (black)</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile02.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone</p>
+                <p class="text-gray-600">Price: 2,00000</p>
+                <p class="text-gray-600">Model: 13 Mini</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile03.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Oppo</p>
+                <p class="text-gray-600">Price: 30,000</p>
+                <p class="text-gray-600">Model: A57</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile04.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone</p>
+                <p class="text-gray-600">Price: 3,00000</p>
+                <p class="text-gray-600">Model: 13Pro Max</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile05.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Oppo</p>
+                <p class="text-gray-600">Price: 74,0000</p>
+                <p class="text-gray-600">Model: A67 2023</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile06.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Samsung</p>
+                <p class="text-gray-600">Price: 1,00000</p>
+                <p class="text-gray-600">Model:A32</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile07.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Realme</p>
+                <p class="text-gray-600">Price: 3,0000</p>
+                <p class="text-gray-600">Model: C21 Y</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile08.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Infinix</p>
+                <p class="text-gray-600">Price: 40,000</p>
+                <p class="text-gray-600">Model: Note 12 Pro</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile09.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone</p>
+                <p class="text-gray-600">Price: 3,00000</p>
+                <p class="text-gray-600">Model: 13 ProMax (Purple)</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile10.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">!plus</p>
+                <p class="text-gray-600">Price: 10,0000</p>
+                <p class="text-gray-600">Model:1plus</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile01.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone </p>
+                <p class="text-gray-600">Price: 2,50000</p>
+                <p class="text-gray-600">Model: 13 pro (black)</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile02.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone</p>
+                <p class="text-gray-600">Price: 2,00000</p>
+                <p class="text-gray-600">Model: 13 Mini</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile03.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Oppo</p>
+                <p class="text-gray-600">Price: 30,000</p>
+                <p class="text-gray-600">Model: A57</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile04.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone</p>
+                <p class="text-gray-600">Price: 3,00000</p>
+                <p class="text-gray-600">Model: 13Pro Max</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile05.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Oppo</p>
+                <p class="text-gray-600">Price: 74,0000</p>
+                <p class="text-gray-600">Model: A67 2023</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile06.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Samsung</p>
+                <p class="text-gray-600">Price: 1,00000</p>
+                <p class="text-gray-600">Model:A32</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile07.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Realme</p>
+                <p class="text-gray-600">Price: 3,0000</p>
+                <p class="text-gray-600">Model: C21 Y</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile08.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Infinix</p>
+                <p class="text-gray-600">Price: 40,000</p>
+                <p class="text-gray-600">Model: Note 12 Pro</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile09.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">Iphone</p>
+                <p class="text-gray-600">Price: 3,00000</p>
+                <p class="text-gray-600">Model: 13 ProMax (Purple)</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <img src="assets/mobile10.jpg" alt="phone" class="w-48 h-64 object-cover rounded-md">
+                <p class="text-xl font-semibold mt-2">!plus</p>
+                <p class="text-gray-600">Price: 10,0000</p>
+                <p class="text-gray-600">Model:1plus</p>
+                <p class="text-gray-600">Quantity: <span class="text-black" id="quantity1">1</span></p>
+                <div class="flex justify-center space-x-2 mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="increaseQuantity(1)">+</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="decreaseQuantity(1)">-</button>
+                    <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500" onclick="resetQuantity(1)">Reset</button>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" onclick="addToCart(1)">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <!-- Add similar divs for other mobiles (up to 3) -->
+
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500" id="shopMoreBtn" onclick="openSwal()">Shop More</button>
+    </div>
+    <footer>
+        <div class="footer-container container mx-auto">
+            <!-- First Column -->
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Services</li>
+                    <li>Portfolio</li>
+                    <li>Contact Us</li>
+                    <li>FAQ</li>
+                </ul>
+            </div>
+    
+            <!-- Second Column -->
+            <div class="footer-column">
+                <h3>Information</h3>
+                <ul>
+                    <li>Terms of Service</li>
+                    <li>Privacy Policy</li>
+                    <li>Shipping Information</li>
+                    <li>Returns & Exchanges</li>
+                    <li>Payment Options</li>
+                    <li>Customer Reviews</li>
+                </ul>
+            </div>
+    
+            <!-- Third Column -->
+            <div class="footer-column">
+                <h3>Subscribe & Follow</h3>
+                <ul>
+                    <li>Subscribe to our Newsletter</li>
+                    <li>Receive Exclusive Offers</li>
+                    <li>Stay Updated</li>
+                    <li>Get the Latest News</li>
+                    <li>Join Our Community</li>
+                </ul>
+            </div>
+    
+            <!-- Fourth Column with Logo and Social Media Links -->
+            <div class="footer-column">
+                <img src="Logos/mobile1.jpg" alt="Company Logo" class="footer-logo">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script src="https://kit.fontawesome.com/54450a3e49.js" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+</body>
+</html>
+
